@@ -395,8 +395,7 @@ section {
 /* ---------- hero (dark) ---------- */
 .hero {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url('../PNG/fondo_1.jpg');
+    url('../PNG/inicio.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -486,8 +485,13 @@ section {
   padding: 112px var(--gutter);
 }
 
+.mapa{
+  padding: clamp(24px, 5vw, 64px);
+  padding-top: 0;
+}
+
 .section-tight {
-  padding: 0 80px var(--gutter);
+  padding: 80px var(--gutter);
 }
 
 .section-linen {
@@ -1383,10 +1387,11 @@ input[type="checkbox"].chip-input {
   background: radial-gradient(260px 200px at 75% 20%, rgba(238, 115, 28, .4), transparent 70%);
 }
 
-.abstract-panel .grid-lines {
+.abstract-panel .grid-lines{
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(var(--on-ink-10) 1px, transparent 1px), linear-gradient(90deg, var(--on-ink-10) 1px, transparent 1px);
-  background-size: 34px 34px;
-  mask-image: radial-gradient(circle at 60% 40%, black, transparent 75%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  mask-image: radial-gradient(circle at 60% 40%, black, transparent 95%);
 }
