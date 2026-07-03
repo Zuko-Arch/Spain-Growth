@@ -8,7 +8,7 @@
 
 :root {
   /* --- core palette (exactly the 3 briefed colors) --- */
-  --ink: #1D1D1B;
+  --ink: #0a0a0a;
   --signal: #EE731C;
   --linen: #F0ECE3;
   --white: #FFFFFF;
@@ -911,10 +911,10 @@ section {
   right: 26px;
   bottom: 26px;
   z-index: 200;
-  width: 56px;
-  height: 56px;
+  width: 66px;
+  height: 66px;
   border-radius: 50%;
-  background: var(--ink);
+  background: #25D366;
   color: var(--linen);
   display: flex;
   align-items: center;
@@ -923,13 +923,12 @@ section {
   transition: transform .3s var(--ease), background .3s var(--ease);
 }
 
-.wa-float svg {
-  width: 24px;
-  height: 24px;
+.wa-float i {
+  font-size: 34px;
 }
 
 .wa-float:hover {
-  background: var(--signal);
+  background: #25D366;
   transform: translateY(-3px) scale(1.04);
 }
 
@@ -937,7 +936,7 @@ section {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid var(--signal);
+  border: 1px solid #25D366;
   animation: pulse 2.4s ease-out infinite;
 }
 
