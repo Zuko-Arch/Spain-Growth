@@ -487,7 +487,7 @@ section {
 }
 
 .section-tight {
-  padding: 80px var(--gutter);
+  padding: 0 80px var(--gutter);
 }
 
 .section-linen {
@@ -1276,7 +1276,6 @@ section {
   border-radius: var(--radius-m);
   overflow: hidden;
   border: 1px solid var(--ink-10);
-  filter: grayscale(1) contrast(1.05);
 }
 
 /* ---------- schedule table ---------- */

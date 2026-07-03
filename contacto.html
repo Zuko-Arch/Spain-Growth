@@ -10,12 +10,26 @@
 </head>
 <body data-page="contacto">
 
-
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="PNG/logo_p.png" alt="Spain Growth" class="logo-desktop">
+      <img src="PNG/logo.png" alt="Spain Growth" class="logo-mobile">
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="inicio">Inicio</a>
+      <a href="servicios.html" data-nav="servicios">Servicios</a>
+      <a href="nosotros.html" data-nav="nosotros">Nosotros</a>
+      <a href="contacto.html" data-nav="contacto">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <a href="proyecto.html" class="btn btn-signal">Tengo un proyecto</a>
+      <button class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
 <header class="page-hero">
   <div class="hero-mesh"></div>
   <div class="wrap">
-    <div class="breadcrumb">Spain Growth <span>/</span> Contacto</div>
     <span class="eyebrow">Contacto</span>
     <h1 style="margin-top:16px;">Hablemos de tu marca.</h1>
     <p class="lead">Escríbenos y un miembro del equipo se pondrá en contacto contigo en menos de 24 horas laborables.</p>
@@ -62,6 +76,7 @@
               <option value="Automatización">Automatización</option>
               <option value="Consultoría">Consultoría</option>
               <option value="E-commerce">E-commerce</option>
+              <option value="Ciberseguridad">Ciberseguridad</option>
               <option value="Otro">Otro / No estoy seguro</option>
             </select>
           </div>
@@ -91,44 +106,45 @@
       </div>
       <div class="info-tile">
         <div class="icon-box"><i data-lucide="phone"></i></div>
-        <div><h4>Teléfono</h4><p>+34 900 000 000</p></div>
+        <div><h4>Teléfono</h4><p>+34 669 56 47 8</p></div>
       </div>
       <div class="info-tile">
         <div class="icon-box"><i data-lucide="message-circle"></i></div>
         <div><h4>WhatsApp</h4><p>Respuesta directa en horario laboral</p></div>
       </div>
-<!-- 
-      <div style="margin-top:32px;">
+      <div class="info-tile">
+        <div class="icon-box"><i data-lucide="map"></i></div>
+        <div><h4>Ubicación</h4><p>C/ Palleter 27, Bétera, Valencia, España</p></div>
+      </div>
+
+      <!-- <div style="margin-top:32px;"      HORARIO DE ATENCION>
         <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-45); margin-bottom:14px;">Horario de atención</h4>
         <div class="schedule-row"><span class="day">Lunes – Sábado</span><span class="time">9:00 – 18:30</span></div>
         <div class="schedule-row"><span class="day">Sábado</span><span class="time">10:00 – 14:00</span></div>
         <div class="schedule-row"><span class="day">Domingo</span><span class="time">Cerrado</span></div>
       </div> -->
 
-      <div style="margin-top:32px;">
+      <!-- <div style="margin-top:32px;"      REDES SOCIALES>
         <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-45); margin-bottom:14px;">Síguenos</h4>
         <div class="footer-social" style="margin-top:0;">
           <a href="#" aria-label="Instagram" style="border-color:var(--ink-20); color:var(--ink);"><i data-lucide="instagram"></i></a>
           <a href="#" aria-label="LinkedIn" style="border-color:var(--ink-20); color:var(--ink);"><i data-lucide="linkedin"></i></a>
           <a href="#" aria-label="X" style="border-color:var(--ink-20); color:var(--ink);"><i data-lucide="twitter"></i></a>
-        </div>
-      </div>
+        </div> 
+      </div> -->
     </div>
 
   </div>
 </section>
 
 <!-- MAP -->
-<!-- <section class="section-tight">
+<section class="section-tight">
   <div class="wrap">
     <div class="map-frame">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.406!2d-3.7037902!3d40.4200136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1ses!2ses!4v0"
-        width="100%" height="380" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Spain Growth en Madrid"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3075.08632123681!2d-0.4654393240301477!3d39.580204871586204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDM0JzQ4LjciTiAwwrAyNyc0Ni4zIlc!5e0!3m2!1ses!2ssv!4v1783037383253!5m2!1ses!2ssv" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </div>
-</section> -->
+</section> 
 
 <footer class="footer">
   <div class="wrap">
@@ -139,11 +155,11 @@
           <img src="PNG/logo.png" alt="Spain Growth" class="logo-mobile">
         </a>
         <p>Agencia de marketing y publicidad que impulsa el crecimiento de empresas, pymes y emprendedores en toda España a través de estrategia digital y una red de especialistas freelance.</p>
-        <div class="footer-social">
+        <!-- <div class="footer-social">
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
           <a href="#" aria-label="X"><i class="fa-brands fa-twitter"></i></a>
-        </div>
+        </div> -->
       </div>
       <div class="footer-col">
         <h4>Navegación</h4>
@@ -162,8 +178,8 @@
       <div class="footer-col">
         <h4>Contacto</h4>
         <p>spaingrowth@gmail.com</p>
-        <p>+34 900 000 000</p>
-        <p>Madrid, España</p>
+        <p>+34 669 56 47 87</p>
+        <p>Valencia, España</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -173,7 +189,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/34900000000" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
+<a class="wa-float" href="https://wa.me/34669564787" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
   <span class="wa-pulse"></span>
   <i data-lucide="message-circle"></i>
 </a>
