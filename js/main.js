@@ -2,7 +2,67 @@
 // SPAIN GROWTH — shared behavior across all pages
 // =====================================================
 
+const themeStorageKey = 'spain-growth-theme';
+let themePreference = 'auto';
+
+const getAutoTheme = () => {
+  const hour = new Date().getHours();
+  return hour >= 19 || hour < 7 ? 'dark' : 'light';
+};
+
+const resolveTheme = (preference) => preference === 'auto' ? getAutoTheme() : preference;
+
+const updateThemeControls = () => {
+  const labelByPreference = {
+    auto: 'Auto',
+    light: 'Claro',
+    dark: 'Oscuro'
+  };
+  const resolved = resolveTheme(themePreference);
+
+  document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+    const label = button.querySelector('.theme-label');
+    if (label) label.textContent = labelByPreference[themePreference];
+    button.setAttribute('aria-label', `Tema actual: ${labelByPreference[themePreference]} (${resolved}). Cambiar tema`);
+    button.setAttribute('title', `Tema: ${labelByPreference[themePreference]}`);
+  });
+};
+
+const applyTheme = (preference) => {
+  themePreference = ['auto', 'light', 'dark'].includes(preference) ? preference : 'auto';
+  document.documentElement.dataset.theme = resolveTheme(themePreference);
+  document.documentElement.dataset.themePreference = themePreference;
+  updateThemeControls();
+};
+
+try {
+  themePreference = localStorage.getItem(themeStorageKey) || 'auto';
+} catch (error) {
+  themePreference = 'auto';
+}
+
+applyTheme(themePreference);
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- theme toggle: auto by local time, manual light/dark ---------- */
+  const themeCycle = ['auto', 'light', 'dark'];
+  updateThemeControls();
+  document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+    button.addEventListener('click', () => {
+      const nextTheme = themeCycle[(themeCycle.indexOf(themePreference) + 1) % themeCycle.length];
+      try {
+        localStorage.setItem(themeStorageKey, nextTheme);
+      } catch (error) {
+        // Storage can fail in private browsing; the visual theme still updates for the session.
+      }
+      applyTheme(nextTheme);
+    });
+  });
+
+  window.setInterval(() => {
+    if (themePreference === 'auto') applyTheme('auto');
+  }, 15 * 60 * 1000);
 
   /* ---------- navbar scroll state ---------- */
   const nav = document.querySelector('.nav');

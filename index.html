@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spain Growth — Agencia de Marketing y Publicidad</title>
   <meta name="description"
-    content="Spain Growth es una agencia de marketing y publicidad en España que impulsa el crecimiento de empresas, pymes y emprendedores mediante estrategia digital y una red de especialistas freelance.">
+    content="Spain Growth es una agencia de marketing y publicidad en España que impulsa el crecimiento de empresas, pymes y emprendedores mediante estrategia digital, creatividad y especialización técnica real.">>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="PNG/logo_nav.png">
@@ -28,6 +28,10 @@
       <a href="contacto.html" data-nav="contacto">Contacto</a>
     </div>
     <div class="nav-right">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema">
+        <i data-lucide="sun-moon"></i>
+        <span class="theme-label">Auto</span>
+      </button>
       <a href="proyecto.html" class="btn btn-signal">Tengo un proyecto</a>
       <button class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
@@ -36,21 +40,56 @@
   <!-- ================= HERO ================= -->
   <header class="hero">
     <div class="hero-mesh"></div>
+    <div class="hero-bulb-wrap" aria-hidden="true">
+      <svg class="hero-bulb-svg" viewBox="0 0 220 360" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="bulbAura" cx="50%" cy="40%" r="55%">
+            <stop offset="0" stop-color="var(--signal)" stop-opacity=".5" />
+            <stop offset=".5" stop-color="var(--signal)" stop-opacity=".18" />
+            <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+          </radialGradient>
+          <linearGradient id="bulbGlass" x1="55" y1="36" x2="170" y2="234" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="var(--white)" stop-opacity=".34" />
+            <stop offset=".42" stop-color="var(--signal)" stop-opacity=".12" />
+            <stop offset="1" stop-color="var(--white)" stop-opacity=".08" />
+          </linearGradient>
+        </defs>
+        <ellipse class="bulb-glow" cx="110" cy="138" rx="94" ry="112" fill="url(#bulbAura)" />
+        <path class="bulb-glass"
+          d="M110 38c-46 0-78 35-78 82 0 31 13 52 32 74 13 15 20 31 22 50h48c2-19 9-35 22-50 19-22 32-43 32-74 0-47-32-82-78-82z"
+          fill="url(#bulbGlass)" stroke="var(--signal)" stroke-opacity=".55" stroke-width="2.5" />
+        <path class="bulb-reflection" d="M74 77c-16 16-23 39-18 64" fill="none" stroke="var(--white)"
+          stroke-width="4" stroke-linecap="round" stroke-opacity=".32" />
+        <path class="bulb-reflection" d="M147 66c15 10 25 27 28 48" fill="none" stroke="var(--signal)"
+          stroke-width="3" stroke-linecap="round" stroke-opacity=".45" />
+        <g class="bulb-filament" fill="none" stroke="var(--signal)" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M77 162c13 10 24 10 33 0 9-10 20-10 33 0" stroke-width="6" />
+          <path d="M86 184h48" stroke-width="4" />
+          <path d="M94 185l-9 54M126 185l9 54" stroke-width="3" />
+        </g>
+        <g class="bulb-socket">
+          <path d="M82 240h56v58c0 15-12 27-27 27h-2c-15 0-27-12-27-27v-58z" fill="var(--ink)"
+            stroke="var(--signal)" stroke-opacity=".7" stroke-width="2" />
+          <path d="M76 253h68M78 270h64M82 287h56" stroke="var(--signal)" stroke-width="4"
+            stroke-linecap="round" stroke-opacity=".7" />
+          <path d="M94 323h32" stroke="var(--signal)" stroke-width="5" stroke-linecap="round" />
+        </g>
+      </svg>
+    </div>
     <svg class="growth-line" viewBox="0 0 1240 640" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <linearGradient id="gg" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stop-color="#EE731C" stop-opacity="0" />
-          <stop offset="0.5" stop-color="#EE731C" stop-opacity=".7" />
-          <stop offset="1" stop-color="#EE731C" stop-opacity="1" />
+          <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+          <stop offset="0.5" stop-color="var(--signal)" stop-opacity=".7" />
+          <stop offset="1" stop-color="var(--signal)" stop-opacity="1" />
         </linearGradient>
       </defs>
       <path d="M -20 560 C 220 560, 260 420, 420 400 C 600 378, 640 480, 800 340 C 940 220, 1000 260, 1260 60" />
-      <circle cx="1260" cy="60" r="5" fill="#EE731C" style="animation-delay:2.6s" />
+      <circle cx="1260" cy="60" r="5" fill="var(--signal)" style="animation-delay:2.6s" />
     </svg>
     <div class="hero-inner">
       <h1 style="margin-top:22px;">Estrategia y creatividad para hacer crecer <em>tu negocio.</em></h1>
-      <p class="lead">Conectamos tu marca con la mejor red de especialistas freelance en marketing digital, branding y
-        desarrollo, para construir crecimiento medible, campaña a campaña.</p>
+      <p class="lead">Impulsamos tu marca con expertos en marketing digital, branding y desarrollo para construir crecimiento medible, campaña a campaña.</p>
       <div class="hero-actions">
         <a href="proyecto.html" class="btn btn-signal btn-lg">Tengo un proyecto
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -62,16 +101,40 @@
     </div>
   </header>
 
+  <!-- ================= SERVICIOS PRIORITARIOS ================= -->
+  <section class="priority-services">
+    <div class="wrap">
+      <div class="priority-services-head reveal">
+        <span class="eyebrow">Servicios clave</span>
+        <h2>Impulso directo para captar más clientes.</h2>
+      </div>
+      <div class="priority-services-grid">
+        <a class="priority-service reveal" href="servicios.html">
+          <div class="icon-box"><i data-lucide="map-pin"></i></div>
+          <h3>SEO Local + Google Business Profile</h3>
+          <p>Más visibilidad en búsquedas cercanas y mapas para negocios en España.</p>
+        </a>
+        <a class="priority-service reveal" href="servicios.html">
+          <div class="icon-box"><i data-lucide="bot"></i></div>
+          <h3>Automatización IA + Chatbots</h3>
+          <p>Atención, captación y seguimiento de leads con flujos inteligentes.</p>
+        </a>
+        <a class="priority-service reveal" href="servicios.html">
+          <div class="icon-box"><i data-lucide="target"></i></div>
+          <h3>Google Ads / SEM</h3>
+          <p>Campañas orientadas a conversión, ventas y retorno medible.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= PRESENTACIÓN ================= -->
   <section class="section">
     <div class="wrap two-col">
       <div class="reveal">
         <span class="eyebrow">Quiénes somos</span>
-        <h2 style="font-size:clamp(26px,3.2vw,38px); margin-top:16px;">Una agencia construida sobre una red de
-          especialistas, no sobre generalistas.</h2>
-        <p style="margin-top:20px; color:var(--ink-70); font-size:16px; max-width:52ch;">Spain Growth conecta a tu
-          empresa con profesionales freelance seleccionados por su especialización real en cada disciplina del
-          marketing. El resultado: equipos a medida para cada proyecto, sin la rigidez de una agencia tradicional.</p>
+        <h2 style="font-size:clamp(26px,3.2vw,38px); margin-top:16px;">Especialización real en cada disciplina, estrategia unificada en cada proyecto.</h2>
+        <p style="margin-top:20px; color:var(--ink-70); font-size:16px; max-width:52ch;">En Spain Growth, cada disciplina la ejecuta quien mejor la domina: estrategia, creatividad, publicidad, SEO o desarrollo. El resultado es una agencia ágil, con criterio técnico real y una coordinación de principio a fin.</p>
         <div class="tag-list">
           <span>Marketing digital</span>
           <span>Branding</span>
@@ -122,6 +185,21 @@
         <p>Una selección de las disciplinas donde más impacto generamos para nuestros clientes.</p>
       </div>
       <div class="grid grid-3">
+        <div class="card reveal">
+          <div class="icon-box"><i data-lucide="map-pin"></i></div>
+          <h3>SEO Local + Google Business Profile</h3>
+          <p>Optimización local para aparecer mejor en Google Maps y búsquedas cercanas.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-box"><i data-lucide="bot"></i></div>
+          <h3>Automatización IA + Chatbots</h3>
+          <p>Flujos inteligentes para captar, atender y cualificar oportunidades de negocio.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-box"><i data-lucide="target"></i></div>
+          <h3>Google Ads / SEM</h3>
+          <p>Campañas de búsqueda y performance enfocadas en conversión y rentabilidad.</p>
+        </div>
         <div class="card reveal">
           <div class="icon-box"><i data-lucide="trending-up"></i></div>
           <h3>Marketing Digital</h3>
@@ -183,8 +261,7 @@
             <div class="icon-box" style="flex-shrink:0;"><i data-lucide="gauge"></i></div>
             <div>
               <h3 style="font-size:17px; margin-bottom:6px;">Estructuras flexibles</h3>
-              <p style="color:var(--ink-70); font-size:14.5px;">Escalamos el equipo según el tamaño real del proyecto,
-                sin costes fijos innecesarios.</p>
+              <p style="color:var(--ink-70); font-size:14.5px;">Adaptamos el alcance y los recursos al tamaño y objetivos reales de cada proyecto, sin estructuras rígidas.</p>
             </div>
           </div>
           <div style="display:flex; gap:16px;">
@@ -319,7 +396,7 @@
             <img src="PNG/logo.png" alt="Spain Growth" class="logo-mobile">
           </a>
           <p>Agencia de marketing y publicidad que impulsa el crecimiento de empresas, pymes y emprendedores en toda
-            España a través de estrategia digital y una red de especialistas freelance.</p>
+            España a través de estrategia digital, creatividad y especialización técnica.</p>
           <!-- <div class="footer-social">
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -335,10 +412,10 @@
         </div>
         <div class="footer-col">
           <h4>Servicios</h4>
+          <a href="servicios.html">SEO Local + Google Business Profile</a>
+          <a href="servicios.html">Automatización IA + Chatbots</a>
+          <a href="servicios.html">Google Ads / SEM</a>
           <a href="servicios.html">Marketing Digital</a>
-          <a href="servicios.html">Diseño &amp; Desarrollo Web</a>
-          <a href="servicios.html">SEO &amp; Publicidad</a>
-          <a href="servicios.html">Branding</a>
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
