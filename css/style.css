@@ -66,9 +66,9 @@
   /* ── accent variations ── */
   --signal-15: rgba(238, 115, 28, .18); /* icon bg tint */
   --signal-glow: rgba(238, 115, 28, .10); /* glow on hover */
-  --signal-glow-strong: rgba(238, 115, 28, .22);
-  --dark-highlight: rgba(255, 255, 255, .045); /* top hairline on raised surfaces */
+  --dark-highlight: rgba(255, 255, 255, .08); /* top hairline on raised surfaces */
   --dark-shadow: rgba(0, 0, 0, .55);
+  --signal-spotlight: linear-gradient(135deg, #ffab5c 0%, var(--signal) 42%, #b8390f 100%);
 }
 
 /* ---------- reset ---------- */
@@ -264,12 +264,13 @@ section {
 
 :root[data-theme="dark"] .btn-ghost {
   color: var(--linen);
-  border-color: var(--ink-20);
+  background: var(--dark-card);
+  border-color: transparent;
 }
 
 :root[data-theme="dark"] .btn-ghost:hover {
-  border-color: var(--linen);
-  background: rgba(240, 236, 227, .06);
+  background: var(--dark-hover);
+  border-color: rgba(238, 115, 28, .3);
 }
 
 .btn-ghost-light {
@@ -824,12 +825,13 @@ section {
 }
 
 :root[data-theme="dark"] .priority-service {
-  background: linear-gradient(165deg, var(--dark-hover) 0%, var(--dark-card) 100%);
+  background: var(--dark-card);
   border-color: var(--dark-border);
   box-shadow: inset 0 1px 0 var(--dark-highlight);
 }
 
 :root[data-theme="dark"] .priority-service:hover {
+  background: var(--dark-hover);
   border-color: rgba(238, 115, 28, .3);
   box-shadow: inset 0 1px 0 var(--dark-highlight), 0 0 0 1px rgba(238, 115, 28, .1), 0 18px 38px -22px var(--dark-shadow);
 }
@@ -908,14 +910,14 @@ section {
 :root[data-theme="dark"] .card,
 :root[data-theme="dark"] .service-card,
 :root[data-theme="dark"] .t-card {
-  background: linear-gradient(165deg, var(--dark-hover) 0%, var(--dark-card) 100%);
+  background: var(--dark-card);
   border-color: var(--dark-border);
   box-shadow: inset 0 1px 0 var(--dark-highlight);
 }
 
 :root[data-theme="dark"] .card:hover,
 :root[data-theme="dark"] .service-card:hover {
-  background: linear-gradient(165deg, var(--dark-hover) 0%, var(--dark-card) 100%);
+  background: var(--dark-hover);
   border-color: rgba(238, 115, 28, .25);
   box-shadow: inset 0 1px 0 var(--dark-highlight), 0 0 0 1px rgba(238, 115, 28, .12), 0 20px 40px -16px var(--dark-shadow);
 }
@@ -1849,15 +1851,46 @@ input[type="checkbox"].chip-input {
   border-left-color: var(--dark-border);
 }
 
-/* ---------- cta-band dark ---------- */
+/* ---------- cta-band dark: gradient "spotlight" panel (signature atmosphere card) ---------- */
 :root[data-theme="dark"] .cta-band {
-  background: linear-gradient(160deg, var(--dark-card) 0%, #201c16 100%);
-  border: 1px solid rgba(238, 115, 28, .16);
-  box-shadow: inset 0 1px 0 var(--dark-highlight), 0 24px 60px -30px var(--dark-shadow);
+  background: var(--signal-spotlight);
+  border: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 30px 70px -28px rgba(238, 115, 28, .5);
 }
 
 :root[data-theme="dark"] .cta-band::before {
-  background: radial-gradient(460px 260px at 50% 0%, rgba(238, 115, 28, .35), transparent 70%);
+  background: radial-gradient(600px 320px at 50% 0%, rgba(255, 255, 255, .18), transparent 70%);
+}
+
+:root[data-theme="dark"] .cta-band h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .cta-band p {
+  color: rgba(255, 255, 255, .85);
+}
+
+:root[data-theme="dark"] .cta-band .btn-signal {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 8px 22px -8px rgba(0, 0, 0, .4);
+}
+
+:root[data-theme="dark"] .cta-band .btn-signal:hover {
+  background: #fff;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, .5);
+}
+
+:root[data-theme="dark"] .cta-band .btn-ghost-light {
+  background: rgba(255, 255, 255, .14);
+  border-color: rgba(255, 255, 255, .35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+:root[data-theme="dark"] .cta-band .btn-ghost-light:hover {
+  background: rgba(255, 255, 255, .24);
+  border-color: rgba(255, 255, 255, .55);
 }
 
 /* ---------- form-success dark ---------- */
@@ -1899,14 +1932,15 @@ input[type="checkbox"].chip-input {
 }
 
 :root[data-theme="dark"] .portfolio-card {
-  background: linear-gradient(180deg, var(--dark-hover) 0%, var(--dark-card) 100%);
+  background: var(--dark-card);
   border-color: var(--dark-border);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+  box-shadow: inset 0 1px 0 var(--dark-highlight);
 }
 
 :root[data-theme="dark"] .portfolio-card:hover {
+  background: var(--dark-hover);
   border-color: rgba(238, 115, 28, .3);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04), 0 0 0 1px rgba(238, 115, 28, .14), 0 24px 48px -18px rgba(0, 0, 0, .65);
+  box-shadow: inset 0 1px 0 var(--dark-highlight), 0 0 0 1px rgba(238, 115, 28, .14), 0 24px 48px -18px rgba(0, 0, 0, .65);
 }
 
 .portfolio-media {
