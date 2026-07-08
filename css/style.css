@@ -4,8 +4,6 @@
    Type: Manrope (display) · Inter (body/UI)
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
-
 :root {
   color-scheme: light;
 
@@ -540,20 +538,43 @@ section {
 .hero {
   background: var(--ink);
   color: var(--linen);
-  padding: 168px var(--gutter) 120px;
+  padding: 168px var(--gutter) 170px;
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 
-.hero-mesh {
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 120px;
+  }
+}
+
+/* ---------- hero background video ---------- */
+.hero-video-wrap {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* keeps a face/subject near the top of the frame from being cropped by cover */
+.hero-video-top {
+  object-position: center 18%;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(560px 420px at 82% 8%, rgba(238, 115, 28, .20), transparent 65%),
-    radial-gradient(700px 500px at 8% 95%, rgba(238, 115, 28, .08), transparent 70%);
+  background: linear-gradient(180deg, rgba(10, 10, 10, .62) 0%, rgba(10, 10, 10, .68) 55%, rgba(10, 10, 10, .82) 100%);
 }
 
 .hero-inner {
@@ -566,6 +587,16 @@ section {
 .page-hero .wrap {
   position: relative;
   z-index: 2;
+}
+
+/* ---------- interactive grid background (hero, no-video pages) ---------- */
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero h1 {
@@ -591,135 +622,6 @@ section {
   gap: 14px;
   margin-top: 40px;
   flex-wrap: wrap;
-}
-
-.hero-bulb-wrap {
-  position: absolute;
-  right: clamp(20px, 9vw, 140px);
-  top: clamp(92px, 14vw, 150px);
-  z-index: 1;
-  width: clamp(150px, 22vw, 300px);
-  height: clamp(250px, 34vw, 450px);
-  pointer-events: none;
-  opacity: .98;
-}
-
-.hero-bulb-svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.bulb-glow,
-.bulb-filament {
-  transform-origin: 50% 32%;
-  animation: flicker 4.8s infinite;
-}
-
-.bulb-glow {
-  opacity: .82;
-  mix-blend-mode: screen;
-}
-
-.bulb-filament {
-  opacity: .96;
-  filter: drop-shadow(0 0 8px var(--signal)) drop-shadow(0 0 22px var(--signal));
-}
-
-.bulb-reflection {
-  animation: flicker 5.6s infinite;
-  animation-delay: .4s;
-}
-
-.bulb-glass {
-  filter: drop-shadow(0 0 10px var(--signal));
-}
-
-@keyframes flicker {
-  0%,
-  100% {
-    opacity: .36;
-    filter: drop-shadow(0 0 7px var(--signal)) drop-shadow(0 0 20px var(--signal));
-  }
-
-  7% {
-    opacity: .82;
-    filter: drop-shadow(0 0 4px var(--signal)) drop-shadow(0 0 12px var(--signal));
-  }
-
-  11% {
-    opacity: 1;
-    filter: drop-shadow(0 0 10px var(--signal)) drop-shadow(0 0 28px var(--signal));
-  }
-
-  18% {
-    opacity: .9;
-    filter: drop-shadow(0 0 6px var(--signal)) drop-shadow(0 0 18px var(--signal));
-  }
-
-  42% {
-    opacity: .98;
-    filter: drop-shadow(0 0 9px var(--signal)) drop-shadow(0 0 24px var(--signal));
-  }
-
-  47% {
-    opacity: .74;
-    filter: drop-shadow(0 0 3px var(--signal)) drop-shadow(0 0 9px var(--signal));
-  }
-
-  52% {
-    opacity: 1;
-    filter: drop-shadow(0 0 11px var(--signal)) drop-shadow(0 0 30px var(--signal));
-  }
-
-  76% {
-    opacity: .88;
-    filter: drop-shadow(0 0 5px var(--signal)) drop-shadow(0 0 16px var(--signal));
-  }
-}
-
-@media (max-width: 760px) {
-  .hero-bulb-wrap {
-    right: -38px;
-    top: 86px;
-    width: clamp(130px, 42vw, 190px);
-    height: clamp(215px, 64vw, 295px);
-    opacity: .56;
-  }
-}
-
-/* growth line signature — animated ascending path */
-.growth-line {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: .9;
-}
-
-.growth-line path {
-  fill: none;
-  stroke: url(#gg);
-  stroke-width: 1.6;
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
-  animation: draw 2.6s var(--ease) .3s forwards;
-}
-
-.growth-line circle {
-  opacity: 0;
-  animation: pop .5s var(--ease) forwards;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes pop {
-  to {
-    opacity: 1;
-  }
 }
 
 /* ---------- section paddings ---------- */
@@ -1363,6 +1265,21 @@ section {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+}
+
+/* taller variant: pages with a background video need more room to show it */
+.page-hero-video {
+  padding-bottom: 260px;
+}
+
+@media (max-width: 760px) {
+  .page-hero-video {
+    padding-bottom: 180px;
+  }
+}
+
+.hero-video-overlay-strong {
+  background: linear-gradient(180deg, rgba(10, 10, 10, .68) 0%, rgba(10, 10, 10, .74) 55%, rgba(10, 10, 10, .86) 100%);
 }
 
 .page-hero h1 {
