@@ -817,11 +817,20 @@ section {
   box-shadow: inset 0 1px 0 var(--dark-highlight);
 }
 
-:root[data-theme="dark"] .card:hover,
-:root[data-theme="dark"] .service-card:hover {
+:root[data-theme="dark"] .card:hover {
   background: var(--dark-hover);
   border-color: rgba(238, 115, 28, .25);
   box-shadow: inset 0 1px 0 var(--dark-highlight), 0 0 0 1px rgba(238, 115, 28, .12), 0 20px 40px -16px var(--dark-shadow);
+}
+
+/* service-card hover: solid signal-orange fill, same as light mode.
+   Needs its own dark-scoped rule — otherwise the resting dark rule above
+   (:root[data-theme="dark"] .service-card, specificity 0,3,0) always beats
+   the theme-unscoped .service-card:hover rule (0,2,0), even while hovered. */
+:root[data-theme="dark"] .service-card:hover {
+  background: var(--signal);
+  border-color: var(--signal);
+  box-shadow: 0 24px 48px -28px rgba(0, 0, 0, .5);
 }
 
 :root[data-theme="dark"] .card .icon-box,
