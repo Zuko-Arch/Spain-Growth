@@ -331,7 +331,7 @@ section {
   width: auto;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1250px) {
   .nav-logo .logo-desktop {
     display: none;
   }
