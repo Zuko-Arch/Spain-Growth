@@ -1,0 +1,138 @@
+<header class="page-hero page-hero-video">
+  <div class="hero-video-wrap" aria-hidden="true">
+    <video #heroVideo class="hero-video hero-video-top" autoplay muted loop playsinline preload="auto">
+      <source src="videos/videoServiciosWebm.webm" type="video/webm">
+      <source src="videos/videoServiciosMp4.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay hero-video-overlay-strong"></div>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow">Servicios</span>
+    <h1 style="margin-top:16px;">Un catálogo completo de disciplinas, un único punto de contacto.</h1>
+    <p class="lead">Combinamos especialistas internos de cada área para construir el equipo exacto que tu proyecto necesita.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap grid grid-3">
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="map-pin"></i></div>
+      <h3>SEO Local + Google Business Profile</h3>
+      <p class="desc">Optimizamos tu presencia local para ganar visibilidad en Google Maps y búsquedas con intención cercana.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Optimización de Perfil de Empresa en Google</li>
+        <li><i data-lucide="check"></i>SEO local por ciudad, zona y servicio</li>
+        <li><i data-lucide="check"></i>Gestión de reseñas y señales de confianza</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'SEO Local + Google Business Profile'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="bot"></i></div>
+      <h3>Automatización IA + Chatbots</h3>
+      <p class="desc">Diseñamos automatizaciones y asistentes inteligentes para atender, cualificar y nutrir leads sin fricción.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Chatbots para web, WhatsApp y captación</li>
+        <li><i data-lucide="check"></i>Automatización de respuestas y seguimiento</li>
+        <li><i data-lucide="check"></i>Integración con CRM y herramientas comerciales</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Automatización IA + Chatbots'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="target"></i></div>
+      <h3>Google Ads / SEM</h3>
+      <p class="desc">Creamos y optimizamos campañas de búsqueda orientadas a captación, ventas y retorno medible.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Estructura de campañas y keywords</li>
+        <li><i data-lucide="check"></i>Landing pages y medición de conversiones</li>
+        <li><i data-lucide="check"></i>Optimización continua de CPA y ROAS</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Google Ads / SEM'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="lock"></i></div>
+      <h3>Ciberseguridad</h3>
+      <p class="desc">Protege tu negocio con las mejores soluciones de ciberseguridad.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Protección de datos</li>
+        <li><i data-lucide="check"></i>Protección de sistemas</li>
+        <li><i data-lucide="check"></i>Estrategia de ciberseguridad</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Ciberseguridad'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="trending-up"></i></div>
+      <h3>Marketing Digital</h3>
+      <p class="desc">Estrategias integrales de adquisición, conversión y fidelización adaptadas a tus objetivos de negocio.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Estrategia basada en datos reales</li>
+        <li><i data-lucide="check"></i>Optimización continua de canales</li>
+        <li><i data-lucide="check"></i>Reportes claros y periódicos</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Marketing Digital'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="cpu"></i></div>
+      <h3>Integraciones</h3>
+      <p class="desc">Conexión de herramientas, plataformas y bases de datos para automatizar tus operaciones sin intermediarios costosos.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Conexiones a más de 500 aplicaciones y APIs</li>
+        <li><i data-lucide="check"></i>Webhooks y sincronización en tiempo real</li>
+        <li><i data-lucide="check"></i>Código limpio y sin dependencias de terceros</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Integraciones'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="bar-chart-3"></i></div>
+      <h3>Data &amp; Analytics</h3>
+      <p class="desc">Automatización de reportes y creación de tableros visuales para consultar tus datos limpios desde cualquier dispositivo.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Tableros de control actualizados en tiempo real</li>
+        <li><i data-lucide="check"></i>Procesos automatizados de limpieza de datos</li>
+        <li><i data-lucide="check"></i>Reportes periódicos directo a tu bandeja de entrada</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Data & Analytics'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+    
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="server"></i></div>
+      <h3>Infra &amp; DevOps</h3>
+      <p class="desc">Configuración de despliegues automáticos, monitoreo constante y esquemas de seguridad avanzados para tu plataforma.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Líneas de despliegue automático (CI/CD)</li>
+        <li><i data-lucide="check"></i>Monitoreo proactivo y alertas 24/7s</li>
+        <li><i data-lucide="check"></i>Copias de seguridad rotativas y automatizadas</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Infra & DevOps'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="icon-box"><i data-lucide="code-2"></i></div>
+      <h3>Desarrollo Web</h3>
+      <p class="desc">Webs y plataformas rápidas, seguras y preparadas para crecer junto a tu negocio.</p>
+      <ul class="benefits">
+        <li><i data-lucide="check"></i>Código limpio y mantenible</li>
+        <li><i data-lucide="check"></i>Rendimiento y velocidad de carga</li>
+        <li><i data-lucide="check"></i>Preparado para integraciones y CMS</li>
+      </ul>
+      <a [routerLink]="['/contacto']" [queryParams]="{servicio: 'Desarrollo Web'}" class="btn btn-ghost">Solicitar información</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="cta-band reveal">
+    <h2>¿No sabes por dónde empezar?</h2>
+    <p>Cuéntanos tu proyecto y te ayudamos a definir la estrategia adecuada.</p>
+    <div class="hero-actions">
+      <a routerLink="/proyecto" class="btn btn-signal btn-lg">Tengo un proyecto</a>
+    </div>
+  </div>
+</section>

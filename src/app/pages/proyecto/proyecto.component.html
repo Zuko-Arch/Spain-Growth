@@ -1,0 +1,91 @@
+<header class="hero" style="padding-bottom:80px;">
+  <app-hero-grid></app-hero-grid>
+  <div class="hero-inner">
+    <h1 style="margin-top:22px; max-width:20ch;">Danos los detalles y diseñemos <em>tu próximo paso.</em></h1>
+    <p class="lead">Completa el formulario con la mayor cantidad de información posible. Cuanto más contexto nos des, más precisa será nuestra primera propuesta.</p>
+    <div style="display:flex; gap:32px; margin-top:44px; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:10px;"><div class="icon-box" style="background:var(--on-ink-10); color:var(--signal);"><i data-lucide="clock"></i></div><span style="font-size:14px; color:var(--on-ink-70);">Respuesta en &lt; 24h laborables</span></div>
+      <div style="display:flex; align-items:center; gap:10px;"><div class="icon-box" style="background:var(--on-ink-10); color:var(--signal);"><i data-lucide="lock"></i></div><span style="font-size:14px; color:var(--on-ink-70);">Información tratada con confidencialidad</span></div>
+      <div style="display:flex; align-items:center; gap:10px;"><div class="icon-box" style="background:var(--on-ink-10); color:var(--signal);"><i data-lucide="users"></i></div><span style="font-size:14px; color:var(--on-ink-70);">Sin compromiso</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap" style="max-width:820px;">
+
+    <form id="project-form" class="reveal" (ngSubmit)="onSubmit()" *ngIf="!submitted()">
+      <div class="form-grid">
+        <div class="field">
+          <label>Nombre <span class="req">*</span></label>
+          <input type="text" name="nombre" [(ngModel)]="formData.nombre" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="field">
+          <label>Empresa</label>
+          <input type="text" name="empresa" [(ngModel)]="formData.empresa" placeholder="Nombre de tu empresa">
+        </div>
+        <div class="field">
+          <label>Correo electrónico <span class="req">*</span></label>
+          <input type="email" name="correo" [(ngModel)]="formData.correo" placeholder="tuempresa@gmail.com" required>
+        </div>
+        <div class="field">
+          <label>Teléfono <span class="req">*</span></label>
+          <input type="tel" name="telefono" [(ngModel)]="formData.telefono" placeholder="+34 600 000 000" required>
+        </div>
+        <div class="field">
+          <label>País</label>
+          <input type="text" name="pais" [(ngModel)]="formData.pais" placeholder="España">
+        </div>
+        <div class="field">
+          <label>Tipo de servicio</label>
+          <select name="tipo_servicio" [(ngModel)]="formData.tipo_servicio">
+            <option value="">Selecciona una opción</option>
+            <option value="SEO Local + Google Business Profile">SEO Local + Google Business Profile</option>
+            <option value="Automatización IA + Chatbots">Automatización IA + Chatbots</option>
+            <option value="Google Ads / SEM">Google Ads / SEM</option>
+            <option value="Ciberseguridad">Ciberseguridad</option>
+            <option value="Marketing Digital">Marketing Digital</option>
+            <option value="Integraciones">Integraciones</option>
+            <option value="Data & Analytics">Data &amp; Analytics</option>
+            <option value="Infra & DevOps">Infra &amp; DevOps</option>
+            <option value="Desarrollo Web">Desarrollo Web</option>
+            <option value="Varios servicios">Varios servicios</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>Presupuesto aproximado</label>
+          <div class="chip-group">
+            <label 
+              *ngFor="let p of presupuestos" 
+              class="chip" 
+              [class.active]="formData.presupuesto === p"
+              (click)="selectPresupuesto(p)"
+            >
+              <input class="chip-input" type="radio" name="presupuesto" [value]="p" [checked]="formData.presupuesto === p">
+              {{ p }}
+            </label>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>Descripción detallada del proyecto <span class="req">*</span></label>
+          <textarea name="descripcion" [(ngModel)]="formData.descripcion" style="min-height:170px;" placeholder="Cuéntanos qué necesitas, en qué situación se encuentra tu marca hoy y qué te gustaría conseguir..." required></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-signal btn-lg" style="margin-top:28px; width:100%;">Enviar mi proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="form-note" style="text-align:center; margin-top:14px;">Al enviar este formulario aceptas que Spain Growth trate tus datos para responder a tu solicitud.</p>
+    </form>
+
+    <div class="form-success show" id="project-success" *ngIf="submitted()">
+      <div class="icon-box"><i data-lucide="check-check"></i></div>
+      <h3>Proyecto recibido, ¡gracias!</h3>
+      <p>El equipo de Spain Growth revisará los detalles de tu proyecto y se pondrá en contacto contigo lo antes posible para dar el siguiente paso.</p>
+      <a routerLink="/" class="btn btn-ghost" style="margin-top:28px;">Volver al inicio</a>
+    </div>
+
+  </div>
+</section>
