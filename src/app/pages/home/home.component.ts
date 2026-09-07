@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, ViewChild, inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
@@ -12,39 +12,46 @@ declare const lucide: any;
   imports: [RouterLink, CommonModule, ScrollRevealDirective, CtaBandComponent],
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
+export class HomeComponent implements AfterViewInit {
   @ViewChild('heroVideo') heroVideoRef?: ElementRef<HTMLVideoElement>;
   private platformId = inject(PLATFORM_ID);
-  private videoObserver?: IntersectionObserver;
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       if (typeof lucide !== 'undefined') {
         lucide.createIcons();
       }
-
-      const video = this.heroVideoRef?.nativeElement;
-      if (video) {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          video.removeAttribute('autoplay');
-          video.pause();
-        } else if ('IntersectionObserver' in window) {
-          this.videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                video.play().catch(() => {});
-              } else {
-                video.pause();
-              }
-            });
-          }, { threshold: 0 });
-          this.videoObserver.observe(video);
-        }
-      }
+      this.startVideo();
     }
   }
 
-  ngOnDestroy(): void {
-    this.videoObserver?.disconnect();
+  private startVideo(): void {
+    const video = this.heroVideoRef?.nativeElement;
+    if (!video) return;
+
+    // Asegurar atributos de reproducción automática
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    const playVideo = () => {
+      video.play().catch(() => {
+        // Si el navegador bloquea autoplay, intentar de nuevo tras interacción del usuario
+        const resume = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('click', resume);
+          document.removeEventListener('touchstart', resume);
+        };
+        document.addEventListener('click', resume, { once: true });
+        document.addEventListener('touchstart', resume, { once: true });
+      });
+    };
+
+    // Intentar reproducir inmediatamente
+    playVideo();
+
+    // Fallback: reproducir en cuanto el video tenga datos suficientes
+    video.addEventListener('canplay', playVideo, { once: true });
   }
 }
+
